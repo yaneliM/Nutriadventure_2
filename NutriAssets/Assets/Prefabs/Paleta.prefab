@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 9190983757932063760}
   - component: {fileID: 1186326034137527095}
   - component: {fileID: 6403953643894106399}
+  - component: {fileID: 1518120866461729218}
   m_Layer: 0
   m_Name: Paleta
   m_TagString: Untagged
@@ -94,8 +95,6 @@ MonoBehaviour:
   Name: Paleta
   Points: 5
   spawner: {fileID: 0}
-  Gyrodata: {fileID: 3998175930174682455, guid: 9f80ecbea9c14ca4d85c05357922e9b3,
-    type: 3}
 --- !u!54 &6403953643894106399
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -112,3 +111,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!64 &1518120866461729218
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9190983757930066640}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300000, guid: b0a2de1551823a64b8a1612570fc65c3, type: 3}

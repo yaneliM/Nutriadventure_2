@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8259032015224910636}
   - component: {fileID: 8354876674511208694}
   - component: {fileID: 7212193090505506460}
+  - component: {fileID: 8792578300725981696}
   m_Layer: 0
   m_Name: Carne
   m_TagString: Untagged
@@ -94,8 +95,6 @@ MonoBehaviour:
   Name: Carne
   Points: 20
   spawner: {fileID: 1314629751230079256, guid: fbd32c2cd23ec704b97adaa6b7daba75, type: 3}
-  Gyrodata: {fileID: 3998175930174682455, guid: 9f80ecbea9c14ca4d85c05357922e9b3,
-    type: 3}
 --- !u!54 &7212193090505506460
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -112,3 +111,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!64 &8792578300725981696
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8259032015226908140}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300000, guid: 3de1aa1a8b461ff43a2c89ea727f82d7, type: 3}

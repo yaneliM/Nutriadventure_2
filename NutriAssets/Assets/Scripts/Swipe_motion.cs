@@ -7,6 +7,8 @@ using UnityEngine.UI;
 public class Swipe_motion : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
 	
+	
+
 	private enum DraggedDirection
 	{
 		Up,
@@ -15,6 +17,7 @@ public class Swipe_motion : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 		Left
 	}
 	
+	public Selecter selecter;
 	public GameObject ITEM;
 	public Image drag_space;
 	public Shooter shooter;
@@ -25,7 +28,7 @@ public class Swipe_motion : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 	
 	void Start()
 	{
-		
+	
 	}
 	
  	public void OnBeginDrag(PointerEventData eventData)

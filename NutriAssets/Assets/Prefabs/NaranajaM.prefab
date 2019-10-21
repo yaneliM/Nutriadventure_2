@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5285429579852420047}
   - component: {fileID: 4180653406909229299}
   - component: {fileID: 6957239315191339825}
+  - component: {fileID: 3010091874467940837}
   m_Layer: 0
   m_Name: NaranajaM
   m_TagString: Untagged
@@ -94,8 +95,6 @@ MonoBehaviour:
   Name: Naranja
   Points: 20
   spawner: {fileID: 1314629751230079256, guid: fbd32c2cd23ec704b97adaa6b7daba75, type: 3}
-  Gyrodata: {fileID: 3998175930174682455, guid: 9f80ecbea9c14ca4d85c05357922e9b3,
-    type: 3}
 --- !u!54 &6957239315191339825
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -112,3 +111,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!64 &3010091874467940837
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5285429579850222863}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300000, guid: 8fa2b2a30e4446f4680f1cdaccd4c720, type: 3}

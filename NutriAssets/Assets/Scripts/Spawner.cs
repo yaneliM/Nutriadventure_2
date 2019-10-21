@@ -14,7 +14,7 @@ public class Spawner : MonoBehaviour
 	*/
 	public Aux_Foe List_prefabs;
 	
-	public Text enemy_counter;
+	
 	public List<Foes> Foe_List = new List<Foes>(); 
 	private int ct_frame;
 	private int ct_sec;
@@ -31,7 +31,7 @@ public class Spawner : MonoBehaviour
     void Update()
     {
         ct_enemies = Foe_List.Count;
-		enemy_counter.text = "Enemies :"+ct_enemies.ToString();
+		
 		ct_frame++;
 		if(ct_frame == 30)
 		{
