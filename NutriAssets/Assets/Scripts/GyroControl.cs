@@ -11,7 +11,6 @@ public class GyroControl : MonoBehaviour
 	private Gyroscope gyro;
 	private GameObject cameraContainer;
 	private Quaternion rot;
-	public Text gyrodata;
 	
 	
 	private void Start()
@@ -30,8 +29,7 @@ public class GyroControl : MonoBehaviour
 		{
 			Quaternion q = gyro.attitude * rot;
 			Debug.Log(q);
-			//transform.localRotation = q;
-			gyrodata.text = q.ToString();
+			transform.localRotation = q;
 		}
 	}
 	

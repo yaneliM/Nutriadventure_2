@@ -31,23 +31,6 @@ public class Swipe_motion : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
  	public void OnBeginDrag(PointerEventData eventData)
 	{
 		
-		cam = GetComponent<Camera>();
-
-		//Vector3 direccion =  cam.ViewportToWorldPoint(new Vector3(eventData.position.x,eventData.position.y,cam.transform.rotation.z));
-		//Physics.Raycast(new Vector3(eventData.position.x,eventData.position.y,cam.transform.rotation.z),cam.transform.forward,100,0);
-
-	/* 
-		RaycastHit hit;
-		if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity,0))
-        {
-            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
-            Debug.Log("Did Hit");
-        }
-        else
-        {
-            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 1000, Color.white);
-            Debug.Log("Did not Hit");
-        }*/
     }
 
 	
@@ -61,22 +44,18 @@ public class Swipe_motion : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 	{
 		GameObject tool = Instantiate(ITEM,shooter.transform.position,Quaternion.identity);
 		Vector3 dragVectorDirection = (eventData.position - eventData.pressPosition).normalized;
-		//Debug.Log("norm + " + dragVectorDirection);
 		Rigidbody rg_tool = tool.GetComponent<Rigidbody>();
-		Dirr = dragVectorDirection.x;
-		Force = 250*dragVectorDirection.y;
-		float Zrange = 250;//*(shooter.transform.rotation.y);
 
-		if(Dirr < 0)
-		{
-		//Debug.Log("LEFT");
-		rg_tool.AddForce(new Vector3(Force*dragVectorDirection.x,Force*dragVectorDirection.y,Force),ForceMode.Impulse);
-		}
-		else
-		{
-		//Debug.Log("RIGHT");
-		rg_tool.AddForce(new Vector3(Force*dragVectorDirection.x,Force*dragVectorDirection.y,Force),ForceMode.Impulse);	
-		}
+		Force = 500;
+		float reducer = dragVectorDirection.y;
+
+		float XF = Force*cam.transform.forward.x;
+		float YF = Force*cam.transform.forward.y;
+		float ZF = Force*cam.transform.forward.z*reducer;
+
+
+		rg_tool.AddForce(new Vector3(XF,YF,ZF),ForceMode.Impulse);
+
 	}
 	
 	
