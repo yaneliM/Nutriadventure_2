@@ -17,7 +17,7 @@ public class Swipe_motion : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 		Left
 	}
 	
-	public Selecter selecter;
+	
 	public GameObject ITEM;
 	public Image drag_space;
 	public Shooter shooter;
@@ -25,10 +25,10 @@ public class Swipe_motion : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 	private float Force = 0f;
 
 	public Camera cam;
-	
+	Selecter selecter;
 	void Start()
 	{
-	
+		selecter = FindObjectOfType<Selecter>();
 	}
 	
  	public void OnBeginDrag(PointerEventData eventData)
@@ -45,6 +45,8 @@ public class Swipe_motion : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 	
 	public void OnEndDrag(PointerEventData eventData)
 	{
+		if(selecter.getState())
+		{
 		GameObject tool = Instantiate(ITEM,shooter.transform.position,Quaternion.identity);
 		Vector3 dragVectorDirection = (eventData.position - eventData.pressPosition).normalized;
 		Rigidbody rg_tool = tool.GetComponent<Rigidbody>();
@@ -56,8 +58,8 @@ public class Swipe_motion : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 		float YF = Force*cam.transform.forward.y;
 		float ZF = Force*cam.transform.forward.z*reducer;
 
-
 		rg_tool.AddForce(new Vector3(XF,YF,ZF),ForceMode.Impulse);
+		}
 
 	}
 	

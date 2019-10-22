@@ -5,15 +5,7 @@ using UnityEngine.UI;
 
 public class Spawner : MonoBehaviour
 {
-   /* 
-    public G_Foes Apple;
-	public G_Foes Meat;
-	public G_Foes Candy;
-	public G_Foes Orange;
-	public G_Foes MOrange;
-	*/
-	public Aux_Foe List_prefabs;
-	
+  	public Aux_Foe List_prefabs;
 	
 	public List<Foes> Foe_List = new List<Foes>(); 
 	private int ct_frame;
@@ -21,6 +13,14 @@ public class Spawner : MonoBehaviour
 	private int ct_enemies;
 	//Crear lista 
  	
+
+
+	private string[,] lista_comida = new string[,] {{"Banana","ManzanaM","NaranajaM","NaranjaC","Paleta"},//Desayuno
+													  {"Carne","ManzanaM","NaranajaM","NaranjaC","Paleta"},//comida
+													  {"Carne","ManzanaM","NaranajaM","NaranjaC","Paleta"}};//Cena
+
+
+
 	// Start is called before the first frame update
     void Start()
     {
@@ -39,11 +39,11 @@ public class Spawner : MonoBehaviour
 			ct_frame = 0;
 			ct_sec++;
 			
-			if(ct_sec == 15)
+			if(ct_sec == 5)
 			{
 			
 				ct_sec = 0;
-				if(ct_enemies <= 5)
+				if(ct_enemies <= 15)
 					Spawn();
 			
 			}
@@ -54,27 +54,28 @@ public class Spawner : MonoBehaviour
 	
 	public void Spawn()
 	{
-		int List_size = List_prefabs.List_prefab.Count;
-		Debug.Log("Tamaño de la lista: "+List_size);
-		G_Foes food = List_prefabs.List_prefab[Random.Range(0,List_size-1)];//cambiar a List_prefabs
 
-		Debug.Log(food.name);
-
-		Foe_List.Add(food);
-
+		G_Foes food = Resources.Load(lista_comida[0,Random.Range(0,5)],typeof(G_Foes))as G_Foes;
 		Instantiate(food,Spawn_position(),Quaternion.identity);
+		//Debug.Log(food.name);
+		Foe_List.Add(food);
 		
 	}
 
 	Vector3 Spawn_position()
 		{
-			int SPx=0;
-			int SPz=0;
+			int SPx = 0;
+			int SPy = 0;
+			int SPz = 0;
 			int Dirx = 0;
 			int Dirz = 0;
+			int Diry = 0;
+
+
 
 			SPx = Random.Range(1,4);
 			SPz = Random.Range(1,4);
+			SPy = Random.Range(1,4);
 
 			while(Dirx == 0)
 			{
@@ -83,6 +84,10 @@ public class Spawner : MonoBehaviour
 			while(Dirz == 0)
 			{
 				Dirz = Random.Range(-1,2);
+			}
+			while(Diry == 0)
+			{
+				Diry = Random.Range(-1,2);
 			}
 			if(Dirx == -1)
 			{
@@ -103,7 +108,7 @@ public class Spawner : MonoBehaviour
 
 
 
-			return new Vector3(Dirx*SPx*10,0,Dirz*SPz*10); //Direccion * Distancia * 
+			return new Vector3(Dirx*SPx*7,Diry*SPy*7,Dirz*SPz*7); //Direccion * Distancia * 
 
 		} 
 	

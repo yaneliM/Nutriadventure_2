@@ -7,19 +7,23 @@ public class Selecter : MonoBehaviour
     private Gyroscope gyro;
     public GameObject EAT;
     public GameObject DESTROY;
-    
-    bool selected = false;
+    RaycastHit hitInfo;
+    RaycastHit HCInfo;
+    public bool selected = false;
 
     void Selected()
     {
 
-
 		gyro.enabled = false;
         EAT.SetActive(true);
         DESTROY.SetActive(true);
-        selected = true;
+        
 
+    }
 
+    public bool getState()
+    {
+       return (selected == true ? true : false);
     }
 
     public void Eat()
@@ -28,7 +32,9 @@ public class Selecter : MonoBehaviour
         EAT.SetActive(false);
         DESTROY.SetActive(false);
         Debug.Log("A comer");
-
+        GameObject ob = HCInfo.transform.gameObject;
+        Destroy(ob);
+        selected = true;
     }
 
     public void Discard()
@@ -37,6 +43,9 @@ public class Selecter : MonoBehaviour
         EAT.SetActive(false);
         DESTROY.SetActive(false);
         Debug.Log("Al hielo <the godfather>");
+        GameObject ob = hitInfo.transform.gameObject;
+        Destroy(ob);
+        selected = true;
 
     }
 
@@ -53,7 +62,6 @@ public class Selecter : MonoBehaviour
         {
              //Debug.Log("Cl.icked");
              Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
-             RaycastHit hitInfo;
              if(Physics.Raycast(ray, out hitInfo))
              {
                 var rig = hitInfo.collider.GetComponent<Rigidbody>();
@@ -61,6 +69,7 @@ public class Selecter : MonoBehaviour
                 if(rig != null)
                 {
                     Selected();
+                    HCInfo = hitInfo;
                     Debug.Log("object hit");
                 }
 

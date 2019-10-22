@@ -12,6 +12,8 @@ public class Aux_Foe : MonoBehaviour
 	public G_Foes MOrange;
 	public List<G_Foes> List_prefab;
 	
+	
+	
 	// Start is called before the first frame update
     void Start()
     {
