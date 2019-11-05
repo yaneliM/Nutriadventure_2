@@ -6,6 +6,14 @@ using UnityEngine.UI;
 public class G_Foes : Foes
 {
     
+    public int Verduras;
+    public int Frutas;
+    public int Animal;
+    public int Cereales;
+    public int Dulces;
+    public int lacteos;
+
+
 	public G_Foes(string name, int points){
 		
 		this.Name = name;

@@ -93,8 +93,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Paleta
-  Points: 5
-  spawner: {fileID: 0}
+  Points: -5
+  Verduras: 0
+  Frutas: 0
+  Animal: 0
+  Cereales: 0
+  Dulces: 0
+  lacteos: 0
 --- !u!54 &6403953643894106399
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -119,7 +124,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9190983757930066640}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 3
   m_Convex: 1

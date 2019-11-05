@@ -10,7 +10,7 @@ public class Selecter : MonoBehaviour
     RaycastHit hitInfo;
     RaycastHit HCInfo;
     public bool selected = false;
-
+    public bool account = false;
     void Selected()
     {
 
@@ -33,8 +33,10 @@ public class Selecter : MonoBehaviour
         DESTROY.SetActive(false);
         Debug.Log("A comer");
         GameObject ob = HCInfo.transform.gameObject;
-        Destroy(ob);
+        Debug.Log(ob.name);
+       // Destroy(ob);
         selected = true;
+        account = true;
     }
 
     public void Discard()
@@ -43,10 +45,11 @@ public class Selecter : MonoBehaviour
         EAT.SetActive(false);
         DESTROY.SetActive(false);
         Debug.Log("Al hielo <the godfather>");
-        GameObject ob = hitInfo.transform.gameObject;
-        Destroy(ob);
+        GameObject ob = HCInfo.transform.gameObject;
+        Debug.Log(ob.name);
+        //Destroy(ob);
         selected = true;
-
+        account = false;
     }
 
     // Start is called before the first frame update

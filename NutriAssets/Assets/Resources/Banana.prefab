@@ -94,7 +94,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Banana
   Points: 20
-  spawner: {fileID: 0}
+  Verduras: 0
+  Frutas: 10
+  Animal: 0
+  Cereales: 0
+  Dulces: 0
+  lacteos: 0
 --- !u!54 &8231609391011142096
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -119,7 +124,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7153459499603862323}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 3
   m_Convex: 1

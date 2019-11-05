@@ -6,7 +6,7 @@ public class Foes : MonoBehaviour
 {
 	public string Name;
 	public int Points;
-	public GameObject spawner;
+	
 
 	
 }

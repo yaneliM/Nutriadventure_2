@@ -94,7 +94,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: NaranjaC
   Points: 0
-  spawner: {fileID: 1314629751230079256, guid: fbd32c2cd23ec704b97adaa6b7daba75, type: 3}
+  Verduras: 0
+  Frutas: 10
+  Animal: 0
+  Cereales: 0
+  Dulces: 0
+  lacteos: 0
 --- !u!54 &7508938363744006828
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -119,7 +124,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3521429407278971272}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 3
   m_Convex: 1

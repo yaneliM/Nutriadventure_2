@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Spawner : MonoBehaviour
 {
-  	public Aux_Foe List_prefabs;
+  //	public Aux_Foe List_prefabs;
 	
 	public List<Foes> Foe_List = new List<Foes>(); 
 	private int ct_frame;
